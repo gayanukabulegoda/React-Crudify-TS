@@ -1,12 +1,12 @@
 import './App.css'
 import {createBrowserRouter, RouterProvider} from "react-router";
 import {Dashboard} from "./pages/Dasboard.tsx";
-import {AddCustomer} from "./pages/AddCustomer.tsx";
-import {ErrorPage} from "./pages/ErrorPage.tsx";
-import {UpdateCustomer} from "./pages/UpdateCustomer.tsx";
-import {DeleteCustomer} from "./pages/DeleteCustomer.tsx";
+import {Add} from "./pages/Add.tsx";
+import {Error} from "./pages/Error.tsx";
+import {Update} from "./pages/Update.tsx";
+import {Delete} from "./pages/Delete.tsx";
 import {RootLayout} from "./components/RootLayout.tsx";
-import {CustomerProvider} from "./components/CustomerProvider.tsx";
+import {CustomerProvider} from "./store/CustomerProvider.tsx";
 
 function App() {
     const routes = createBrowserRouter([
@@ -15,18 +15,18 @@ function App() {
             element: <RootLayout/>,
             children: [
                 {path: '/', element: <Dashboard/>},
-                {path: '/add', element: <AddCustomer/>},
-                {path: '/update', element: <UpdateCustomer/>},
-                {path: '/delete', element: <DeleteCustomer/>},
+                {path: '/add', element: <Add/>},
+                {path: '/update', element: <Update/>},
+                {path: '/delete', element: <Delete/>},
             ]
         },
 
-        {path: '*', element: <ErrorPage/>}
+        {path: '*', element: <Error/>}
     ]);
     return (
         <>
             <CustomerProvider>
-                <RouterProvider router={routes}></RouterProvider>
+                    <RouterProvider router={routes}></RouterProvider>
             </CustomerProvider>
         </>
     )

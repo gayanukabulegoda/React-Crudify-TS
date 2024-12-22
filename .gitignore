@@ -35,7 +35,7 @@ jspm_packages/
 *.sublime-workspace
 
 # Tailwind CSS
-tailwind.config.js
+#tailwind.config.js
 tailwind.config.ts
 
 # TypeScript
