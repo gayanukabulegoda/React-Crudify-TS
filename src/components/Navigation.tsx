@@ -3,9 +3,9 @@ import "./Navigation.css";
 
 export function Navigation() {
     return (
-        <>
-            <header className="bg-blue-600 text-white py-4 w-full text-center shadow">
-                <nav>
+        <header className="navbar-container">
+            <div className="navbar-content">
+                <nav className="py-4">
                     <ul className="flex justify-center list-none p-0 m-0">
                         <li className="navbar-item">
                             <Link className="navbar-link" to="/">Dashboard</Link>
@@ -21,7 +21,7 @@ export function Navigation() {
                         </li>
                     </ul>
                 </nav>
-            </header>
-        </>
+            </div>
+        </header>
     );
 }

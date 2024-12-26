@@ -4,8 +4,8 @@ interface HeadingModelProps {
 
 export function HeadingModel(props: HeadingModelProps) {
     return (
-        <>
-            <h1 className="text-4xl font-bold mb-4 text-gray-800">{props.children}</h1>
-        </>
+        <h1 className="section-heading">
+            {props.children}
+        </h1>
     );
 }
