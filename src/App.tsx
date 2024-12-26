@@ -1,12 +1,12 @@
 import './App.css'
 import {createBrowserRouter, RouterProvider} from "react-router";
-import {Dashboard} from "./pages/Dasboard.tsx";
+import {Dashboard} from "./pages/Dashboard/Dasboard.tsx";
 import {Add} from "./pages/Add.tsx";
 import {Error} from "./pages/Error.tsx";
-import {Update} from "./pages/Update.tsx";
+import {Update} from "./pages/Update/Update.tsx";
 import {Delete} from "./pages/Delete.tsx";
 import {RootLayout} from "./components/RootLayout.tsx";
-import {CustomerProvider} from "./store/CustomerProvider.tsx";
+import {DataProvider} from "./store/DataProvider.tsx";
 
 function App() {
     const routes = createBrowserRouter([
@@ -20,14 +20,13 @@ function App() {
                 {path: '/delete', element: <Delete/>},
             ]
         },
-
         {path: '*', element: <Error/>}
     ]);
     return (
         <>
-            <CustomerProvider>
+            <DataProvider>
                     <RouterProvider router={routes}></RouterProvider>
-            </CustomerProvider>
+            </DataProvider>
         </>
     )
 }

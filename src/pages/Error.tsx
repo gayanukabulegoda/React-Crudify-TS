@@ -7,7 +7,7 @@ export const Error = () => {
             <p className="text-xl mb-8">Sorry, an error occurred. Please try again later.</p>
             <ul className="list-none p-0">
                 <li>
-                    <Link to={'/'} className="text-blue-500 no-underline text-xl border border-blue-500 py-2 px-4 rounded transition duration-300 hover:bg-blue-500 hover:text-white">Go Back</Link>
+                    <Link to={'/'} className="go-back-button">Go Back</Link>
                 </li>
             </ul>
         </div>

@@ -1,44 +1,39 @@
 import {Key, useContext} from "react";
-import {CustomerContext, ItemContext} from "../store/CustomerProvider.tsx";
-import {HeadingModel} from "../components/HeadingModel.tsx";
-import {CustomerCard} from "../components/CustomerCard.tsx";
+import {CustomerContext, ItemContext} from "../store/Contexts.ts";
 import {Customer} from "../models/Customer.ts";
 import {Item} from "../models/Item.ts";
+import {HeadingModel} from "../components/HeadingModel.tsx";
+import {CustomerCard} from "../components/CustomerCard.tsx";
 import {ItemCard} from "../components/ItemCard.tsx";
+import {DashboardOrDeleteSection} from "./DashboardOrDeleteSection.tsx";
 
 export function Delete() {
-    const [customers, setCustomers] = useContext(CustomerContext);
-    const [items, setItems] = useContext(ItemContext);
+    const [customers, customerDispatch] = useContext(CustomerContext);
+    const [items, itemDispatch] = useContext(ItemContext);
 
-    const handleDeleteCustomer = (email: string) => {
-        setCustomers(customers.filter((c: Customer) => c.email !== email));
+    const handleDeleteCustomer = (customer: Customer) => {
+        customerDispatch({type: 'DELETE_CUSTOMER', payload: customer});
     }
 
-    const handleDeleteItem = (id: string) => {
-        setItems(items.filter((i: Item) => i.id !== id));
+    const handleDeleteItem = (item: Item) => {
+        itemDispatch({type: 'DELETE_ITEM', payload: item});
     }
 
     return (
-        <>
+        <div className="page-container space-y-8">
             <HeadingModel>Delete Customer</HeadingModel>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div>
-                    <h2 className="text-2xl font-bold mb-4">Customers</h2>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                        {customers.map((customer: Customer, index: Key) => (
-                            <CustomerCard key={index} customer={customer} onDelete={handleDeleteCustomer}/>
-                        ))}
-                    </div>
-                </div>
-                <div>
-                    <h2 className="text-2xl font-bold mb-4">Items</h2>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                        {items.map((item: Item, index: Key) => (
-                            <ItemCard key={index} item={item} onDelete={handleDeleteItem}/>
-                        ))}
-                    </div>
-                </div>
+            <div className="section-grid">
+                <DashboardOrDeleteSection title="Customers">
+                    {customers.map((customer: Customer, index: Key) => (
+                        <CustomerCard key={index} customer={customer} onDelete={handleDeleteCustomer}/>
+                    ))}
+                </DashboardOrDeleteSection>
+                <DashboardOrDeleteSection title="Items">
+                    {items.map((item: Item, index: Key) => (
+                        <ItemCard key={index} item={item} onDelete={handleDeleteItem}/>
+                    ))}
+                </DashboardOrDeleteSection>
             </div>
-        </>
+        </div>
     );
 }

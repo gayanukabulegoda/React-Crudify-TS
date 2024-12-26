@@ -12,22 +12,38 @@ interface InputModalProps {
 export function CustomerInputModal(props: InputModalProps) {
     return (
         <>
-            <input type="text" placeholder="Enter name" value={props.name}
-                   onChange={(e) => {
-                       props.setName(e.target.value)
-                   }}/>
-            <input type="text" placeholder="Enter address" value={props.address}
-                   onChange={(e) => {
-                       props.setAddress(e.target.value)
-                   }}/>
-            <input type="text" placeholder="Enter email" value={props.email}
-                   onChange={(e) => {
-                       props.setEmail(e.target.value)
-                   }}/>
-            <input type="text" placeholder="Enter phone" value={props.phone}
-                   onChange={(e) => {
-                       props.setPhone(e.target.value)
-                   }}/>
+            <input
+                type="text"
+                placeholder="Enter name"
+                value={props.name}
+                onChange={(e) => {
+                    props.setName(e.target.value)
+                }}
+            />
+            <input
+                type="text"
+                placeholder="Enter address"
+                value={props.address}
+                onChange={(e) => {
+                    props.setAddress(e.target.value)
+                }}
+            />
+            <input
+                type="text"
+                placeholder="Enter email"
+                value={props.email}
+                onChange={(e) => {
+                    props.setEmail(e.target.value)
+                }}
+            />
+            <input
+                type="text"
+                placeholder="Enter phone"
+                value={props.phone}
+                onChange={(e) => {
+                    props.setPhone(e.target.value)
+                }}
+            />
         </>
     );
 }

@@ -5,9 +5,8 @@ interface SubmitBtnModelProps {
 
 export function SubmitBtnModel(props: SubmitBtnModelProps) {
     return (
-        <>
-            <button className="submit-button"
-                    onClick={props.handleSubmit}>{props.children}</button>
-        </>
+        <button className="submit-button" onClick={props.handleSubmit}>
+            {props.children}
+        </button>
     );
 }

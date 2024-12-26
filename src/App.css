@@ -2,13 +2,70 @@
 @tailwind components;
 @tailwind utilities;
 
-input {
-  @apply w-full max-w-md p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary;
+@layer base {
+    body {
+        @apply bg-gray-50;
+    }
 }
 
-/* If we declare CSS with @layer, then it will capable to be seen with (code) suggestions (with plugins) */
 @layer components {
-  .submit-button {
-    @apply py-2 px-4 bg-blue-500 text-white rounded transition duration-300 hover:bg-blue-700;
-  }
+    input {
+        @apply w-full max-w-md p-3 border border-gray-200 rounded-lg
+        focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary
+        transition-all duration-200 bg-white shadow-sm;
+    }
+
+    .submit-button {
+        @apply py-2.5 px-6 bg-primary text-white rounded-lg font-medium
+        shadow-lg shadow-primary/30 hover:bg-primary-dark
+        transform hover:-translate-y-0.5 transition-all duration-200
+        focus:ring-2 focus:ring-primary/50 focus:ring-offset-2;
+    }
+
+    .go-back-button {
+        @apply text-blue-500 no-underline text-xl border
+        border-blue-500 py-2 px-4 rounded transition duration-300
+        hover:bg-blue-500 hover:text-white
+    }
+
+    .search-button {
+        @apply px-6 py-2 bg-primary text-white rounded-lg font-medium
+        hover:bg-primary-dark transform hover:-translate-y-0.5
+        transition-all duration-200 shadow-md hover:shadow-lg
+    }
+
+    .delete-button {
+        @apply w-full mt-4 py-2 px-4 bg-red-500 text-white rounded-lg
+        hover:bg-red-600 transform hover:-translate-y-0.5
+        transition-all duration-200 font-medium
+        focus:ring-2 focus:ring-red-500/50 focus:ring-offset-2
+    }
+
+    .card {
+        @apply bg-white rounded-xl shadow-lg border border-gray-100
+        hover:shadow-xl transition-all duration-300
+        transform hover:-translate-y-1;
+    }
+
+    .page-container {
+        @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8;
+    }
+
+    .section-heading {
+        @apply text-3xl font-bold text-gray-900 mb-8
+        after:content-[''] after:block after:w-20 after:h-1
+        after:bg-primary after:mt-2;
+    }
+
+    .section-title {
+        @apply text-2xl font-bold text-gray-900 mb-6 pb-2 border-b border-gray-100;
+    }
+
+    .section-grid {
+        @apply grid grid-cols-1 lg:grid-cols-2 gap-8;
+    }
+
+    .section-container {
+        @apply bg-white rounded-xl shadow-lg p-6 border border-gray-100;
+    }
 }
