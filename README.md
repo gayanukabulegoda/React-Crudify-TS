@@ -1,50 +1,154 @@
-# React + TypeScript + Vite
+<a id="readme-top"></a>
+<div>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+  # <img src="https://github.com/tandpfun/skill-icons/raw/main/icons/React-Dark.svg" width="45" alt="React Icons"> React-Crudify-TS
 
-Currently, two official plugins are available:
+  <p align="left">
+    Welcome to the <strong>React-Crudify-TS</strong> repository! This project is a basic CRUD application built with React and TypeScript, featuring state management using Reducer and Context API, and styled with Tailwind CSS. It demonstrates best practices for scalable state management and modern frontend development workflows.
+    <br />
+</div>
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+<!-- TABLE OF CONTENTS -->
+<details>
+  <summary>Table of Contents</summary>
+  <ol>
+    <li>
+      <a href="#about-the-project">About The Project</a>
+      <ul>
+        <li><a href="#built-with">Built With</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#getting-started">Getting Started</a>
+      <ul>
+        <li><a href="#prerequisites">Prerequisites</a></li>
+        <li><a href="#installation">Installation</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#usage">Usage</a>
+    </li>
+    <li>
+      <a href="#license">License</a>
+    </li>
+  </ol>
+</details>
 
-## Expanding the ESLint configuration
+<!-- ABOUT THE PROJECT -->
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## About The Project
 
-- Configure the top-level `parserOptions` property like this:
+This project is a basic CRUD application built with React and TypeScript. It features state management using Reducer and Context API, and is styled with Tailwind CSS. The project demonstrates best practices for scalable state management and modern frontend development workflows.
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+### User Interface
+<br>
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+![Design-Thumbnail](src/assets/Readme-demo-img.png)
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+- Clean interface built with **React** and **TypeScript**.
+- Dynamic elements for user interaction powered by **Context API** and **Reducer**.
+- Styled with **Tailwind CSS** for a modern and responsive design.
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+### Built With
+
+This project was developed using a variety of modern web technologies and libraries to ensure a responsive and dynamic user experience.
+
+- [![React][React.com]][React-url]
+- [![TypeScript][TypeScript.com]][TypeScript-url]
+- [![Tailwind CSS][TailwindCSS.com]][TailwindCSS-url]
+- [![Vite][Vite.com]][Vite-url]
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- GETTING STARTED -->
+
+## Getting Started
+
+Follow these steps to set up the project locally and get it running on your machine. The instructions will guide you through the process of cloning the repository and configuring any required settings.
+
+### Prerequisites
+
+Before setting up the project, make sure you have the following tools and libraries installed or configured as needed:
+
+- **Node.js**  
+  Ensure you have Node.js installed. You can download it from [Node.js](https://nodejs.org/).
+
+- **npm**  
+  npm is included with Node.js. Verify the installation by running:
+  ```sh
+  npm -v
+  ```
+
+### Installation
+
+Follow these steps to install and set up the project on your local machine:
+
+1. **Clone the repository**
+
+   ```sh
+   git clone https://github.com/gayanukabulegoda/React-Crudify-TS.git
+   ```
+
+2. **Navigate to the project directory**
+
+   ```sh
+   cd React-Crudify-TS
+   ```
+
+3. **Install dependencies**
+
+   ```sh
+   npm install
+   ```
+
+4. **Start the development server**
+
+   ```sh
+   npm run dev
+   ```
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- USAGE -->
+
+## Usage
+
+To use the application, follow these steps:
+
+1. **Add Data**: Navigate to the "Add" section to add new customers or items.
+2. **Update Data**: Use the "Update" section to modify existing customer or item details.
+3. **Delete Data**: Go to the "Delete" section to remove customers or items from the system.
+4. **View Dashboard**: The "Dashboard" provides an overview of all customers and items.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- LICENSE -->
+
+## License
+
+Distributed under the MIT License. See [LICENSE](LICENSE) for more information.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+##
+
+<div align="center">
+<a href="https://github.com/gayanukabulegoda" target="_blank"><img src = "https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white"></a>
+<a href="https://git-scm.com/" target="_blank"><img src = "https://img.shields.io/badge/Git-100000?style=for-the-badge&logo=git&logoColor=white"></a>
+<a href="https://reactjs.org/" target="_blank"><img src = "https://img.shields.io/badge/React-100000?style=for-the-badge&logo=react&logoColor=white"></a>
+<a href="https://www.typescriptlang.org/" target="_blank"><img src = "https://img.shields.io/badge/TypeScript-100000?style=for-the-badge&logo=typescript&logoColor=white"></a>
+<a href="https://tailwindcss.com/" target="_blank"><img src = "https://img.shields.io/badge/Tailwind_CSS-100000?style=for-the-badge&logo=tailwindcss&logoColor=white"></a>
+<a href="https://vitejs.dev/" target="_blank"><img src = "https://img.shields.io/badge/Vite-100000?style=for-the-badge&logo=vite&logoColor=white"></a>
+</div> <br>
+<p align="center">
+  &copy; 2024 Gayanuka Bulegoda
+</p>
+
+[React.com]: https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black
+[React-url]: https://reactjs.org/
+[TypeScript.com]: https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white
+[TypeScript-url]: https://www.typescriptlang.org/
+[TailwindCSS.com]: https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white
+[TailwindCSS-url]: https://tailwindcss.com/
+[Vite.com]: https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white
+[Vite-url]: https://vitejs.dev/
