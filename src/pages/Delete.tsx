@@ -1,22 +1,25 @@
-import {Key, useContext} from "react";
-import {CustomerContext, ItemContext} from "../store/Contexts.ts";
+import {Key} from "react";
 import {Customer} from "../models/Customer.ts";
 import {Item} from "../models/Item.ts";
 import {HeadingModel} from "../components/HeadingModel.tsx";
 import {CustomerCard} from "../components/CustomerCard.tsx";
 import {ItemCard} from "../components/ItemCard.tsx";
 import {DashboardOrDeleteSection} from "./DashboardOrDeleteSection.tsx";
+import {useDispatch, useSelector} from "react-redux";
+import {deleteCustomer} from "../reducers/CustomerSlice.ts";
+import {deleteItem} from "../reducers/ItemSlice.ts";
 
 export function Delete() {
-    const [customers, customerDispatch] = useContext(CustomerContext);
-    const [items, itemDispatch] = useContext(ItemContext);
+    const dispatch = useDispatch();
+    const customers = useSelector((state: { customers: Customer[] }) => state.customers);
+    const items = useSelector((state: { items: Item[] }) => state.items);
 
     const handleDeleteCustomer = (customer: Customer) => {
-        customerDispatch({type: 'DELETE_CUSTOMER', payload: customer});
+        dispatch(deleteCustomer(customer));
     }
 
     const handleDeleteItem = (item: Item) => {
-        itemDispatch({type: 'DELETE_ITEM', payload: item});
+        dispatch(deleteItem(item));
     }
 
     return (

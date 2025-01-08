@@ -1,6 +1,5 @@
-import {useContext, useState} from "react";
+import {useState} from "react";
 import {useNavigate} from "react-router";
-import {CustomerContext, ItemContext} from "../../store/Contexts.ts";
 import {Customer} from "../../models/Customer.ts";
 import {Item} from "../../models/Item.ts";
 import {CustomerInputModal} from "../../components/CustomerInputModal.tsx";
@@ -9,11 +8,15 @@ import {HeadingModel} from "../../components/HeadingModel.tsx";
 import {ItemInputModel} from "../../components/ItemInputModel.tsx";
 import {AddOrUpdateSection} from "../AddOrUpdateSection.tsx";
 import {SearchBar} from "./SearchBar.tsx";
+import {useDispatch, useSelector} from "react-redux";
+import {updateCustomer} from "../../reducers/CustomerSlice.ts";
+import {updateItem} from "../../reducers/ItemSlice.ts";
 
 export function Update() {
     const navigate = useNavigate();
-    const [customers, customerDispatch] = useContext(CustomerContext);
-    const [items, itemDispatch] = useContext(ItemContext);
+    const dispatch = useDispatch();
+    const customers = useSelector((state: { customers: Customer[] }) => state.customers);
+    const items = useSelector((state: { items: Item[] }) => state.items);
     const [searchEmail, setSearchEmail] = useState('');
     const [customerId, setCustomerId] = useState('');
     const [name, setName] = useState('');
@@ -48,18 +51,12 @@ export function Update() {
     }
 
     const handleUpdateCustomer = () => {
-        customerDispatch({
-            type: 'UPDATE_CUSTOMER',
-            payload: new Customer(customerId, name, address, email, phone)
-        });
+        dispatch(updateCustomer({id: customerId, name, address, email, phone}));
         navigate('/');
     }
 
     const handleUpdateItem = () => {
-        itemDispatch({
-            type: 'UPDATE_ITEM',
-            payload: new Item(itemId, itemName, description, price)
-        });
+        dispatch(updateItem({id: itemId, name: itemName, description, price}));
         navigate('/');
     }
 
