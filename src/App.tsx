@@ -6,7 +6,6 @@ import {Error} from "./pages/Error.tsx";
 import {Update} from "./pages/Update/Update.tsx";
 import {Delete} from "./pages/Delete.tsx";
 import {RootLayout} from "./components/RootLayout.tsx";
-import {DataProvider} from "./store/DataProvider.tsx";
 
 function App() {
     const routes = createBrowserRouter([
@@ -24,9 +23,7 @@ function App() {
     ]);
     return (
         <>
-            <DataProvider>
-                    <RouterProvider router={routes}></RouterProvider>
-            </DataProvider>
+            <RouterProvider router={routes}></RouterProvider>
         </>
     )
 }

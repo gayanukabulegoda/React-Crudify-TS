@@ -1,18 +1,17 @@
-import {useContext, useState} from "react";
+import {useState} from "react";
 import {useNavigate} from "react-router";
-import {CustomerContext, ItemContext} from "../store/Contexts.ts";
-import {Customer} from "../models/Customer.ts";
-import {Item} from "../models/Item.ts";
 import {CustomerInputModal} from "../components/CustomerInputModal.tsx";
 import {SubmitBtnModel} from "../components/SubmitBtnModel.tsx";
 import {HeadingModel} from "../components/HeadingModel.tsx";
 import {ItemInputModel} from "../components/ItemInputModel.tsx";
 import {AddOrUpdateSection} from "./AddOrUpdateSection.tsx";
+import {useDispatch} from "react-redux";
+import {addCustomer} from "../reducers/CustomerSlice.ts";
+import {addItem} from "../reducers/ItemSlice.ts";
 
 export function Add() {
     const navigate = useNavigate();
-    const [, customerDispatch] = useContext(CustomerContext);
-    const [, itemDispatch] = useContext(ItemContext);
+    const dispatch = useDispatch();
     const [name, setName] = useState('');
     const [address, setAddress] = useState('');
     const [email, setEmail] = useState('');
@@ -22,14 +21,14 @@ export function Add() {
     const [price, setPrice] = useState(0);
 
     const handleAddCustomer = () => {
-        const newCustomer = new Customer(Math.random().toString(), name, address, email, phone);
-        customerDispatch({type: 'ADD_CUSTOMER', payload: newCustomer});
+        const newCustomer = {id: Math.random().toString(), name, address, email, phone};
+        dispatch(addCustomer(newCustomer));
         navigate('/');
     }
 
     const handleSubmitItem = () => {
-        const newItem = new Item(Math.random().toString(), itemName, description, price);
-        itemDispatch({type: 'ADD_ITEM', payload: newItem});
+        const newItem = {id: Math.random().toString(), name: itemName, description, price};
+        dispatch(addItem(newItem));
         navigate('/');
     }
 

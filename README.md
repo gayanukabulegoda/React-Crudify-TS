@@ -1,10 +1,10 @@
 <a id="readme-top"></a>
 <div>
 
-  # <img src="https://github.com/tandpfun/skill-icons/raw/main/icons/React-Dark.svg" width="45" alt="React Icons"> React-Crudify-TS
+# <img src="https://github.com/tandpfun/skill-icons/raw/main/icons/React-Dark.svg" width="45" alt="React Icons"> React-Crudify-TS
 
   <p align="left">
-    Welcome to the <strong>React-Crudify-TS</strong> repository! This project is a basic CRUD application built with React and TypeScript, featuring state management using Reducer and Context API, and styled with Tailwind CSS. It demonstrates best practices for scalable state management and modern frontend development workflows.
+    Welcome to the <strong>React-Crudify-TS</strong> repository! This project is a CRUD application built with React and TypeScript, featuring state management using Context API, Reducer, and Redux. It is styled with Tailwind CSS and demonstrates best practices for scalable state management and modern frontend development workflows.
     <br />
 </div>
 
@@ -29,6 +29,9 @@
       <a href="#usage">Usage</a>
     </li>
     <li>
+      <a href="#branches">Branches</a>
+    </li>
+    <li>
       <a href="#license">License</a>
     </li>
   </ol>
@@ -38,7 +41,7 @@
 
 ## About The Project
 
-This project is a basic CRUD application built with React and TypeScript. It features state management using Reducer and Context API, and is styled with Tailwind CSS. The project demonstrates best practices for scalable state management and modern frontend development workflows.
+This project is a CRUD application built with React and TypeScript. It features state management using Context API, Reducer, and Redux, and is styled with Tailwind CSS. The project demonstrates best practices for scalable state management and modern frontend development workflows.
 
 ### User Interface
 <br>
@@ -46,7 +49,7 @@ This project is a basic CRUD application built with React and TypeScript. It fea
 ![Design-Thumbnail](src/assets/Readme-demo-img.png)
 
 - Clean interface built with **React** and **TypeScript**.
-- Dynamic elements for user interaction powered by **Context API** and **Reducer**.
+- Dynamic elements for user interaction powered by **Context API**, **Reducer**, and **Redux**.
 - Styled with **Tailwind CSS** for a modern and responsive design.
 
 ### Built With
@@ -57,6 +60,7 @@ This project was developed using a variety of modern web technologies and librar
 - [![TypeScript][TypeScript.com]][TypeScript-url]
 - [![Tailwind CSS][TailwindCSS.com]][TailwindCSS-url]
 - [![Vite][Vite.com]][Vite-url]
+- [![Redux][Redux.com]][Redux-url]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -122,6 +126,26 @@ To use the application, follow these steps:
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+<!-- BRANCHES -->
+
+## Branches
+
+The project is available in three branches, each demonstrating different state management techniques:
+
+- **dev/context-api**: Implements state management using Context API.
+- **dev/reducer**: Implements state management using Reducer.
+- **dev/redux**: Implements state management using Redux.
+
+Switch to the appropriate branch to explore different implementations.
+
+```sh
+  git checkout dev/context-api  # For Context API
+  git checkout dev/reducer      # For Reducer
+  git checkout dev/redux        # For Redux
+```
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 <!-- LICENSE -->
 
 ## License
@@ -139,16 +163,9 @@ Distributed under the MIT License. See [LICENSE](LICENSE) for more information.
 <a href="https://www.typescriptlang.org/" target="_blank"><img src = "https://img.shields.io/badge/TypeScript-100000?style=for-the-badge&logo=typescript&logoColor=white"></a>
 <a href="https://tailwindcss.com/" target="_blank"><img src = "https://img.shields.io/badge/Tailwind_CSS-100000?style=for-the-badge&logo=tailwindcss&logoColor=white"></a>
 <a href="https://vitejs.dev/" target="_blank"><img src = "https://img.shields.io/badge/Vite-100000?style=for-the-badge&logo=vite&logoColor=white"></a>
+<a href="https://redux.js.org/" target="_blank"><img src = "https://img.shields.io/badge/Redux-100000?style=for-the-badge&logo=redux&logoColor=white"></a>
 </div> <br>
 <p align="center">
-  &copy; 2024 Gayanuka Bulegoda
+  &copy; 2025 Gayanuka Bulegoda
 </p>
 
-[React.com]: https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black
-[React-url]: https://reactjs.org/
-[TypeScript.com]: https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white
-[TypeScript-url]: https://www.typescriptlang.org/
-[TailwindCSS.com]: https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white
-[TailwindCSS-url]: https://tailwindcss.com/
-[Vite.com]: https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white
-[Vite-url]: https://vitejs.dev/

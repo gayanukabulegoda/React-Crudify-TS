@@ -1,5 +1,4 @@
-import {Key, useContext} from "react";
-import {CustomerContext, ItemContext} from "../../store/Contexts.ts";
+import {Key} from "react";
 import {Customer} from "../../models/Customer.ts";
 import {Item} from "../../models/Item.ts";
 import {CustomerCard} from "../../components/CustomerCard.tsx";
@@ -7,10 +6,11 @@ import {ItemCard} from "../../components/ItemCard.tsx";
 import {HeadingModel} from "../../components/HeadingModel.tsx";
 import {DashboardStats} from "./DashboardStats.tsx";
 import {DashboardOrDeleteSection} from "../DashboardOrDeleteSection.tsx";
+import {useSelector} from "react-redux";
 
 export function Dashboard() {
-    const [customers] = useContext(CustomerContext);
-    const [items] = useContext(ItemContext);
+    const customers = useSelector((state: { customers: Customer[] }) => state.customers);
+    const items = useSelector((state: { items: Item[] }) => state.items);
 
     return (
         <div className="page-container space-y-8">
